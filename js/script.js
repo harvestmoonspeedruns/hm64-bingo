@@ -43,48 +43,58 @@ function check_win() {
   }
 }
 
+function button_click() {
+  build_board();
+}
+
 function build_board() {
   var shuffled = shuffle($('#inputCode').val());
   var board = "";
   
   for (var i = 0; i < 24; i++) {
 	if (i == 12) {
-	  board += "<div data-value='1' class='selected freesquare' id='sqfree'><div class='text'><br/>free space</div></div>";
+//	  board += "<div data-value='1' class='selected freesquare' id='sqfree'><div class='text'><br/>free space</div></div>";
+	  board += "<div data-value='0' class='square' id='sq" + i + "'>";
+	  board += "<img src='/img/girls/girl_" + shuffled[i] + ".png' />";
+	  board +="<div class='text'>Marry " + girls[shuffled[i]] + "</div></div>";
+	} else {
+	  board += "<div data-value='0' class='square' id='sq" + i + "'><div class='text'><br/>" + shuffled[i] + "</div></div>";
 	}
-	board += "<div data-value='0' class='square' id='sq"+i+"'><div class='text'><br/>" + shuffled[i] + "</div></div>";
   }
   $('#board').html(board);
-  $('#inputCode').val('');
 }
 
 function shuffle(code) {
   var bingo_copy = bingo.slice(0);
-  if (code == undefined || code == "") { return knuth_shuffle(bingo_copy); }
+  if (code == undefined || code == "") {
+  	bingo_copy = knuth_shuffle(bingo_copy);
+  	bingo_copy[12] = Math.floor(Math.random() * 5);
+  	return bingo_copy;
+  }
 
   var hash = MD5(code);
   var cur_index = 0;
   var new_bingo = [];
-  
-  console.log("hash random: " + hash);
 
   code = code.toLowerCase();
   for (var i = 0; i < hash.length; i++) {
   	cur_index += hash.charCodeAt(i);
   }
   
-  for (var i = 0; i < 24; i++) {
-  	var elem = bingo_copy.splice(cur_index % bingo_copy.length, 1);
-  	new_bingo.push(elem);
-  	cur_index += hash.charCodeAt(i % hash.length);
+  for (var i = 0; i < 25; i++) {
+  	if (i == 12) {
+  		new_bingo.push(cur_index % 5);
+  	} else {
+  	  var elem = bingo_copy.splice(cur_index % bingo_copy.length, 1);
+  	  new_bingo.push(elem);
+  	  cur_index += hash.charCodeAt(i % hash.length);
+  	}
   }
   
   return new_bingo;
 }
 
 function knuth_shuffle(array) {
-
-  console.log("true random")
-
   var currentIndex = array.length, temporaryValue, randomIndex;
 
   // While there remain elements to shuffle...
