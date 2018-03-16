@@ -11,8 +11,8 @@ var bingo = [];
 //Power Berries
 bingo = bingo.concat([
 	'Ocean Power Berry', 'Farm Power Berry', 'Mining Power Berry',
-	'Frozen Pond Berry', 'Wish Power Berry', 'Egg Festival Berry',
-	'Kappa Power Berry', 'Sprite Power Berry', 'Basil Power Berry', 'Rock Power Berry']);
+	'Frozen Pond Berry', 'Goddess Pond Power Berry', 'Egg Festival Berry',
+	'Kappa Power Berry', 'Sprite Power Berry', 'Basil Power Berry', 'Frozen Pond Power Berry']);
 
 //Events
 bingo = bingo.concat([
