@@ -51,11 +51,11 @@ function build_board() {
   var shuffled = shuffle($('#inputCode').val());
   var board = "";
   
-  for (var i = 0; i < 24; i++) {
+  for (var i = 0; i < 25; i++) {
 	if (i == 12) {
 //	  board += "<div data-value='1' class='selected freesquare' id='sqfree'><div class='text'><br/>free space</div></div>";
 	  board += "<div data-value='0' class='square' id='sq" + i + "'>";
-	  board += "<img src='/img/girls/girl_" + shuffled[i] + ".png' />";
+	  board += "<img src='/img/girls/girl_" + shuffled[i] + ".png' style='margin-top:5px' />";
 	  board +="<div class='text'>Marry " + girls[shuffled[i]] + "</div></div>";
 	} else {
 	  board += "<div data-value='0' class='square' id='sq" + i + "'><div class='text'><br/>" + shuffled[i] + "</div></div>";
@@ -66,9 +66,17 @@ function build_board() {
 
 function shuffle(code) {
   var bingo_copy = bingo.slice(0);
+  var random_girl = 0;
+  
   if (code == undefined || code == "") {
+  	random_girl = Math.floor(Math.random() * 5);
+  	for (var i = 0; i < 5; i++) {
+  	  if (i != random_girl) {
+  	    bingo_copy.push(guys[i] + " Marries " + girls[i]);
+  	  }
+    }
   	bingo_copy = knuth_shuffle(bingo_copy);
-  	bingo_copy[12] = Math.floor(Math.random() * 5);
+  	bingo_copy[12] = random_girl;
   	return bingo_copy;
   }
 
@@ -81,9 +89,16 @@ function shuffle(code) {
   	cur_index += hash.charCodeAt(i);
   }
   
+  random_girl = cur_index % 5;
+  for (var i = 0; i < 5; i++) {
+  	if (i != random_girl) {
+  	  bingo_copy.push(guys[i] + " Marries " + girls[i]);
+  	}
+  }
+  
   for (var i = 0; i < 25; i++) {
   	if (i == 12) {
-  		new_bingo.push(cur_index % 5);
+  		new_bingo.push(random_girl);
   	} else {
   	  var elem = bingo_copy.splice(cur_index % bingo_copy.length, 1);
   	  new_bingo.push(elem);
