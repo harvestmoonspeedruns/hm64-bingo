@@ -1,57 +1,90 @@
 $(document).ready(function() {
   $('body').on('touchmove', false);
   
-	shuffle(bingo);
-	
-	var board = "";
-	for (var i = 0; i < 24; i++) {
-	  if (i == 12) {
-	    board += "<div data-value='1' class='selected freesquare' id='sqfree'><div class='text'><br/>free space</div></div>";
-	  }
-	  board += "<div data-value='0' class='square' id='sq"+i+"'><div class='text'><br/>"+bingo[i]+"</div></div>";
-  	}
-  	$('#board').html(board);
+  build_board();
 
-	$('div.square').tappable(function () {
-      $(this).toggleClass('selected');
-      if ($(this).data('value') == 1) {
-      		$(this).data('value', 0); }
-      else {
-      		$(this).data('value', 1); }
+  $('div.square').tappable(function () {
+    $(this).toggleClass('selected');
+    if ($(this).data('value') == 1) {
+      $(this).data('value', 0);
+    } else {
+      $(this).data('value', 1);
+    }
       		
-         clickSnd.play();
-
-		var row1 = ($('#sq0').data('value')+$('#sq1').data('value')+$('#sq2').data('value')+$('#sq3').data('value')+$('#sq4').data('value'));
-		var row2 = ($('#sq5').data('value')+$('#sq6').data('value')+$('#sq7').data('value')+$('#sq8').data('value')+$('#sq9').data('value'));
-		var row3 = ($('#sq10').data('value')+$('#sq11').data('value')+$('#sqfree').data('value')+$('#sq12').data('value')+$('#sq13').data('value'));
-		var row4 = ($('#sq14').data('value')+$('#sq15').data('value')+$('#sq16').data('value')+$('#sq17').data('value')+$('#sq18').data('value'));	
-		var row5 = ($('#sq19').data('value')+$('#sq20').data('value')+$('#sq21').data('value')+$('#sq22').data('value')+$('#sq23').data('value'));			
-
-		var col1 = ($('#sq0').data('value')+$('#sq5').data('value')+$('#sq10').data('value')+$('#sq14').data('value')+$('#sq19').data('value'));
-		var col2 = ($('#sq1').data('value')+$('#sq6').data('value')+$('#sq11').data('value')+$('#sq15').data('value')+$('#sq20').data('value'));
-		var col3 = ($('#sq2').data('value')+$('#sq7').data('value')+$('#sqfree').data('value')+$('#sq16').data('value')+$('#sq21').data('value'));
-		var col4 = ($('#sq3').data('value')+$('#sq8').data('value')+$('#sq12').data('value')+$('#sq17').data('value')+$('#sq22').data('value'));	
-		var col5 = ($('#sq4').data('value')+$('#sq9').data('value')+$('#sq13').data('value')+$('#sq18').data('value')+$('#sq23').data('value'));			
-
-		var diag1 = ($('#sq0').data('value')+$('#sq6').data('value')+$('#sqfree').data('value')+$('#sq17').data('value')+$('#sq23').data('value'));	
-		var diag2 = ($('#sq4').data('value')+$('#sq8').data('value')+$('#sqfree').data('value')+$('#sq15').data('value')+$('#sq19').data('value'));	
-		
-		if (row1 == 5 || row2 == 5 || row3 == 5 || row4 == 5 || row5 == 5 || col1 == 5 || col2 == 5 || col3 == 5  || col4 == 5  || col5 == 5 || diag1 == 5 || diag2 == 5) {
-			$('#header').html(winText);
-			$('#header').addClass("win");
-	
-         	winSnd.play();
-    		
-    	} else {
-			$('#header').html(headerText);
-			$('#header').removeClass("win");
-		}; 
-    });
-        
+    clickSnd.play();
+    check_win();
+  });
+  
 });
 
-//Knuth Shuffle
-function shuffle(array) {
+function check_win() {
+  var row1 = ($('#sq0').data('value')+$('#sq1').data('value')+$('#sq2').data('value')+$('#sq3').data('value')+$('#sq4').data('value'));
+  var row2 = ($('#sq5').data('value')+$('#sq6').data('value')+$('#sq7').data('value')+$('#sq8').data('value')+$('#sq9').data('value'));
+  var row3 = ($('#sq10').data('value')+$('#sq11').data('value')+$('#sqfree').data('value')+$('#sq12').data('value')+$('#sq13').data('value'));
+  var row4 = ($('#sq14').data('value')+$('#sq15').data('value')+$('#sq16').data('value')+$('#sq17').data('value')+$('#sq18').data('value'));	
+  var row5 = ($('#sq19').data('value')+$('#sq20').data('value')+$('#sq21').data('value')+$('#sq22').data('value')+$('#sq23').data('value'));			
+
+  var col1 = ($('#sq0').data('value')+$('#sq5').data('value')+$('#sq10').data('value')+$('#sq14').data('value')+$('#sq19').data('value'));
+  var col2 = ($('#sq1').data('value')+$('#sq6').data('value')+$('#sq11').data('value')+$('#sq15').data('value')+$('#sq20').data('value'));
+  var col3 = ($('#sq2').data('value')+$('#sq7').data('value')+$('#sqfree').data('value')+$('#sq16').data('value')+$('#sq21').data('value'));
+  var col4 = ($('#sq3').data('value')+$('#sq8').data('value')+$('#sq12').data('value')+$('#sq17').data('value')+$('#sq22').data('value'));	
+  var col5 = ($('#sq4').data('value')+$('#sq9').data('value')+$('#sq13').data('value')+$('#sq18').data('value')+$('#sq23').data('value'));			
+
+  var diag1 = ($('#sq0').data('value')+$('#sq6').data('value')+$('#sqfree').data('value')+$('#sq17').data('value')+$('#sq23').data('value'));	
+  var diag2 = ($('#sq4').data('value')+$('#sq8').data('value')+$('#sqfree').data('value')+$('#sq15').data('value')+$('#sq19').data('value'));	
+		
+  if (row1 == 5 || row2 == 5 || row3 == 5 || row4 == 5 || row5 == 5 || col1 == 5 || col2 == 5 || col3 == 5  || col4 == 5  || col5 == 5 || diag1 == 5 || diag2 == 5) {
+    $('#header').html(winText);
+    $('#header').addClass("win");
+    winSnd.play();
+  } else {
+    $('#header').html(headerText);
+    $('#header').removeClass("win");
+  }
+}
+
+function build_board() {
+  var shuffled = shuffle($('#inputCode').val());
+  var board = "";
+  
+  for (var i = 0; i < 24; i++) {
+	if (i == 12) {
+	  board += "<div data-value='1' class='selected freesquare' id='sqfree'><div class='text'><br/>free space</div></div>";
+	}
+	board += "<div data-value='0' class='square' id='sq"+i+"'><div class='text'><br/>" + shuffled[i] + "</div></div>";
+  }
+  $('#board').html(board);
+  $('#inputCode').val('');
+}
+
+function shuffle(code) {
+  var bingo_copy = bingo.slice(0);
+  if (code == undefined || code == "") { return knuth_shuffle(bingo_copy); }
+
+  var hash = MD5(code);
+  var cur_index = 0;
+  var new_bingo = [];
+  
+  console.log("hash random: " + hash);
+
+  code = code.toLowerCase();
+  for (var i = 0; i < hash.length; i++) {
+  	cur_index += hash.charCodeAt(i);
+  }
+  
+  for (var i = 0; i < 24; i++) {
+  	var elem = bingo_copy.splice(cur_index % bingo_copy.length, 1);
+  	new_bingo.push(elem);
+  	cur_index += hash.charCodeAt(i % hash.length);
+  }
+  
+  return new_bingo;
+}
+
+function knuth_shuffle(array) {
+
+  console.log("true random")
+
   var currentIndex = array.length, temporaryValue, randomIndex;
 
   // While there remain elements to shuffle...
