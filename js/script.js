@@ -48,6 +48,17 @@ function build_board() {
 	}
   }
   $('#board').html(board);
+  
+  $('div.square').tappable(function () {
+    $(this).toggleClass('selected');
+    if ($(this).data('value') == 1) {
+      $(this).data('value', 0);
+    } else {
+      $(this).data('value', 1);
+    }
+    clickSnd.play();
+    check_win();
+  });
 }
 
 function shuffle(code) {
@@ -113,17 +124,6 @@ function knuth_shuffle(array) {
 
   return array;
 }
-
-$('div.square').tappable(function () {
-  $(this).toggleClass('selected');
-  if ($(this).data('value') == 1) {
-    $(this).data('value', 0);
-  } else {
-    $(this).data('value', 1);
-  }
-  clickSnd.play();
-  check_win();
-});
 
 /*! Normalized address bar hiding for iOS & Android (c) @scottjehl MIT License */
 (function( win ){
