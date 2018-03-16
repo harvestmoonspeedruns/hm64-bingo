@@ -1,37 +1,31 @@
 <!DOCTYPE html>
-
 <html>
-
-<head>
-
+  <head>
 	<title>Bingo</title>
-	
 	<meta name="viewport" content="user-scalable=no, width=device-width">
-
+	
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" >
 	<link href="css/style.css" rel="stylesheet" type="text/css">
 
-	<script src="js/jquery.js" type="text/javascript"></script>
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="js/jquery.tappable.js" type="text/javascript"></script>
-
 	<script src="js/data.js" type="text/javascript"></script>
-	
 	<script src="js/script.js" type="text/javascript"></script>
-	
-</head>
+  </head>
 
-<body>
-
-	<div id="container">
-	
-		<div id="header"></div>
-		
-		<div id="board"></div>
-	
-		<div id="footer"></div>
-
+  <body>
+  	<div id="container">
+	  <div id="header">Harvest Moon 64 Bingo</div>
+	  <form class="form-inline" id="form">
+  	    <div class="form-group mx-sm-3 mb-2">
+    	  <label for="inputCode" style="font-size:20px" >Code:</label>
+    	  <input type="text" class="form-control" id="inputCode" placeholder="" />
+  		</div>
+  		<button type="submit" class="btn btn-primary mb-2" style="font-size:16px">Randomize!</button>
+	  </form><br/>
+	  <div id="board"> </div>
 	</div>
-	
-</body>
+  </body>
 
 </html>

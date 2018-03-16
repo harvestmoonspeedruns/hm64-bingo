@@ -1,31 +1,22 @@
-
 $(document).ready(function() {
+  $('body').on('touchmove', false);
+  
+	shuffle(bingo);
 	
-	$('body').on('touchmove', false);
-	
-	$('#header').append(headerText);
-	
-	$('#footer').append(footerText);
-
-	shuffle(JSONBingo.squares);
-	
-	for (i=0; i<24; i++)	{
-	
-		if (i==12) {
-			$('#board').append("<div data-value='1' class='selected freesquare' id='sqfree'><div class='text'><br/>free space</div></div>");
-			$('#board').append("<div data-value='0' class='square' id='sq12'><div class='text'><br/>"+JSONBingo.squares[i].square+"</div></div>");
-		} else {
-			$('#board').append("<div data-value='0' class='square' id='sq"+i+"'><div class='text'><br/>"+JSONBingo.squares[i].square+"</div></div>");
-		}
-  }
+	var board = "";
+	for (var i = 0; i < 24; i++) {
+	  if (i == 12) {
+	    board += "<div data-value='1' class='selected freesquare' id='sqfree'><div class='text'><br/>free space</div></div>";
+	  }
+	  board += "<div data-value='0' class='square' id='sq"+i+"'><div class='text'><br/>"+bingo[i]+"</div></div>";
+  	}
+  	$('#board').html(board);
 
 	$('div.square').tappable(function () {
       $(this).toggleClass('selected');
       if ($(this).data('value') == 1) {
-            //alert(event.target.id);
       		$(this).data('value', 0); }
       else {
-            //alert(event.target.id);
       		$(this).data('value', 1); }
       		
          clickSnd.play();
@@ -59,11 +50,25 @@ $(document).ready(function() {
         
 });
 
+//Knuth Shuffle
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
 
-shuffle = function(v){
-    	for(var j, x, i = v.length; i; j = parseInt(Math.random() * i), x = v[--i], v[i] = v[j], v[j] = x);
-    	return v;
-};
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
 
 /*! Normalized address bar hiding for iOS & Android (c) @scottjehl MIT License */
 (function( win ){
