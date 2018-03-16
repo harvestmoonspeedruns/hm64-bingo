@@ -55,7 +55,7 @@ function build_board() {
 	if (i == 12) {
 //	  board += "<div data-value='1' class='selected freesquare' id='sqfree'><div class='text'><br/>free space</div></div>";
 	  board += "<div data-value='0' class='square' id='sq" + i + "'>";
-	  board += "<img src='/img/girls/girl_" + shuffled[i] + ".png' style='margin-top:5px' />";
+	  board += "<img src='img/girls/girl_" + shuffled[i] + ".png' style='margin-top:5px' />";
 	  board +="<div class='text'>Marry " + girls[shuffled[i]] + "</div></div>";
 	} else {
 	  board += "<div data-value='0' class='square' id='sq" + i + "'><div class='text'><br/>" + shuffled[i] + "</div></div>";
