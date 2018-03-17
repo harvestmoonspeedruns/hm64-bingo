@@ -25,7 +25,18 @@
   		<button type="button" class="btn btn-primary mb-2" style="font-size:16px" onclick="build_board()">Randomize!</button>
 	  </form><br/>
 	  <div id="board"> </div>
+	  <br/><br/>
+	  <button class="btn btn-info" onclick="change_mode()">Stream Mode</button>
 	</div>
   </body>
 
 </html>
+
+<script>
+  function change_mode() {
+  	$('.btn-info').hide();
+  	$('body').css("background-image","url('https://upload.wikimedia.org/wikipedia/commons/a/a7/Flag_of_Afghanistan_%281880%E2%80%931901%29.svg')");
+  	$('#header').hide();
+  	$('form').hide();
+  }
+</script>
