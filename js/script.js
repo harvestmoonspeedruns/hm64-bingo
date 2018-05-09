@@ -62,10 +62,15 @@ function build_board() {
 	} else {
 	  if ($(this).hasClass('good') || $(this).hasClass('bad')) {
 	  	$(this).addClass('selected');
+	  	$(this).data('value', 1);
 	  }
 	  $(this).removeClass('good').removeClass('bad');
       $(this).toggleClass('selected');
-      $(this).data('value', ($(this).data('value') == 1) ? 0 : 1);
+      if ($(this).data('value') == 1) {
+      	$(this).data('value', 0);
+      } else {
+      	$(this).data('value', 1);
+      }
       clickSnd.play();
       check_win();
     }
