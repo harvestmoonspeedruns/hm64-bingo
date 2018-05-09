@@ -84,6 +84,16 @@ body {
 	-webkit-transition-duration: 1s;
 }
 
+.good {
+	color: #f1f1f1;
+	background-color: green;
+}
+
+.bad {
+	color: #f1f1f1;
+	background-color: red;
+}
+
 .selected {
 	color: #f1f1f1;
 	background-color: #313131;

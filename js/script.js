@@ -39,7 +39,6 @@ function build_board() {
   
   for (var i = 0; i < 25; i++) {
 	if (i == 12) {
-//	  board += "<div data-value='1' class='selected freesquare' id='sqfree'><div class='text'><br/>free space</div></div>";
 	  board += "<div data-value='0' class='square' id='sq" + i + "'>";
 	  board += "<img src='img/girls/girl_" + shuffled[i] + ".png' style='margin-top:5px' />";
 	  board +="<div class='text'>Marry " + girls[shuffled[i]] + "</div></div>";
@@ -50,14 +49,26 @@ function build_board() {
   $('#board').html(board);
   
   $('div.square').tappable(function () {
-    $(this).toggleClass('selected');
-    if ($(this).data('value') == 1) {
+  	if (event.shiftKey) { //holding shift while clicking
       $(this).data('value', 0);
-    } else {
-      $(this).data('value', 1);
+      $(this).removeClass('selected');
+      if ($(this).hasClass('good')) {
+      	$(this).removeClass('good');
+      	$(this).addClass('bad');
+      } else {
+      	$(this).removeClass('bad');
+      	$(this).addClass('good');
+      }
+	} else {
+	  if ($(this).hasClass('good') || $(this).hasClass('bad')) {
+	  	$(this).addClass('selected');
+	  }
+	  $(this).removeClass('good').removeClass('bad');
+      $(this).toggleClass('selected');
+      $(this).data('value', ($(this).data('value') == 1) ? 0 : 1);
+      clickSnd.play();
+      check_win();
     }
-    clickSnd.play();
-    check_win();
   });
 }
 
