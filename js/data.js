@@ -10,18 +10,17 @@ var guys = ['Cliff', 'Jeff', 'Kai', 'Harris', 'Gray'];
 var bingo = [];
 //Power Berries
 bingo = bingo.concat([
-	'Ocean Power Berry', 'Farm Power Berry', 'Mining Power Berry',
-	'Frozen Pond Berry', 'Goddess Pond Power Berry', 'Egg Festival Berry',
-	'Kappa Power Berry', 'Sprite Power Berry', 'Basil Power Berry', 'Frozen Pond Power Berry']);
+	'Ocean Power Berry', 'Farm Power Berry', 'Mine Power Berry', 'Goddess Power Berry', 'Egg Festival Power Berry',
+	'Kappa Power Berry', 'Sprite Power Berry', 'Basil Power Berry', 'Frozen Pond Rock Power Berry']);
 
 //Events
 bingo = bingo.concat([
-	'Vineyard Restored', 'Gray Plants Flowers', 'Cliff Leaves']);
+	'Vineyard Restored', 'Gray Plants Flowers', 'Cliff Leaves', 'Purchase Saibara&#8217s Vase']);
 
 //Photos
 bingo = bingo.concat([
 	'Dog Race Photo', 'Horse Race Photo', 'Swimming Photo',
-	'Cow Festival Photo', 'Win Vegetable Festival', 'Harvest King Photo',
+	'Cow Festival Photo', 'Win Vegetable Festival', 'Ride the Balloon Photo',
 	'Ann&#8217s Photo', 'Karen&#8217s Photo', 'Elli&#8217s Photo',
 	'Maria&#8217s Photo', 'Blue Mist Photo']);
 
@@ -30,10 +29,24 @@ bingo = bingo.concat([
 	'Greenhouse Built', 'Log Terrace Built', 'Kitchen Built',
 	'Bathroom Built', 'Staircase Built']);
 
+//Tools
+bingo = bingo.concat([
+	'Golden Hoe', 'Golden Axe', 'Golden Watering Can',
+	'Golden Hammer', 'Golden Sickle']);
+
 //Crops
 bingo = bingo.concat([
 	'Corn in Bag', 'Tomato in Bag', 'Eggplant in Bag', 'Full Moon Berry in Bag',
-	'Strawberry in Bag', 'Turnip in Bag', 'Potato in Bag', 'Cabbage in Bag']);
+	'Strawberry in Bag', 'Turnip in Bag', 'Potato in Bag', 'Cabbage in Bag', 'Egg in Bag', 'Milk in Bag', 'Wool in Bag']);
+
+//Recipes
+bingo = bingo.concat([
+	'Fried Char from Greg &#40Large Fish&#41','Herb Rice Cake from Sydney &#40Edible Herb&#41',
+	'Veryberry Wine from Kai &#40Veryberry&#41', 'Sesame Dandelion from Saibara &#40Medicinal or Edible Herb&#41',
+	'Fried Potatoes and Bacon from the Mayor &#40Potato&#41','Easy Tomato Soup from the Shipper &#40Tomato&#41',
+	'Corn  Fritter from Doug &#40Corn&#41', 'Mushroom Rice from Head Carpenter &#40Mushroom&#41',
+	'Spa Poached Egg from Kent &#40Egg&#41', 'Handmade Butter from Rick &#40Milk&#41',
+	'Eggplant with Miso Paste from the Midwife &#40Eggplant&#41', 'Strawberry Dog from Stu &#40Strawberry&#41']);
 
 //Affection based
 bingo = bingo.concat([
