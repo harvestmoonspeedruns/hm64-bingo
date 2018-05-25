@@ -7,79 +7,99 @@ var winSnd = new Audio("audio/win.mp3");
 var girls = ['Ann', 'Elli', 'Karen', 'Maria', 'Popuri'];
 var guys = ['Cliff', 'Jeff', 'Kai', 'Harris', 'Gray'];
 
-var bingo = [];
+// Marriage square rows include simpler items from the "bingo_simple" list
+// to add incentive to use rows through the marriage square in the center
+var bingo_simple = [];
+var bingo_complex = [];
+
 //Power Berries
-bingo = bingo.concat([
-	'Ocean Power Berry', 'Farm Power Berry', 'Mine Power Berry', 'Goddess Power Berry', 'Egg Festival Power Berry',
-	'Kappa Power Berry', 'Sprite Power Berry', 'Basil Power Berry', 'Frozen Pond Rock Power Berry']);
+bingo_simple = bingo_simple.concat([
+	'Goddess Power Berry', 'Egg Festival Power Berry', 'Kappa Power Berry', 'Frozen Pond Rock Power Berry']);
+bingo_complex = bingo_complex.concat([
+	'Sprite Power Berry', 'Basil Power Berry', 'Ocean Power Berry', 'Farm Power Berry', 'Mine Power Berry']);
 
 //Events
-bingo = bingo.concat([
-	'Vineyard Restored', 'Gray Plants Flowers', 'Cliff Leaves', 'Purchase Saibara&#8217s Vase']);
+bingo_complex = bingo_complex.concat([
+	'Vineyard Restored', 'Purchase Saibara&#8217s Vase', 'Win Vegetable Festival']);
+/*
+ *  NPC Bachelor marries Bachelorette events added later
+ *  (when random marriage square is chosen to avoid overlap)
+ */
 
 //Photos
-bingo = bingo.concat([
-	'Dog Race Photo', 'Horse Race Photo', 'Swimming Photo',
-	'Cow Festival Photo', 'Win Vegetable Festival', 'Ride the Balloon Photo',
+bingo_simple = bingo_simple.concat([
+	'Swimming Photo', 'Ride the Balloon Photo', 'Blue Mist Photo']);
+bingo_complex = bingo_complex.concat([
+	'Dog Race Photo', 'Horse Race Photo', 'Cow Festival Photo',
 	'Ann&#8217s Photo', 'Karen&#8217s Photo', 'Elli&#8217s Photo',
-	'Maria&#8217s Photo', 'Blue Mist Photo']);
+	'Maria&#8217s Photo']);
 
 //Extensions
-bingo = bingo.concat([
+bingo_complex = bingo_complex.concat([
 	'Greenhouse Built', 'Log Terrace Built', 'Kitchen Built',
-	'Bathroom Built', 'Staircase Built']);
+	'Bathroom Built', 'Staircase Built', 'Baby Bed Built']);
 
-//Tools
-bingo = bingo.concat([
-	'Golden Hoe', 'Golden Axe', 'Golden Watering Can',
-	'Golden Hammer', 'Golden Sickle']);
+//Tools and Ricks Shop
+bingo_simple = bingo_simple.concat([
+	'Golden Hoe', 'Golden Axe', 'Golden Watering Can', 'Golden Hammer', 'Golden Sickle']);
+bingo_complex = bingo_complex.concat([
+	'Buy the Room Organizer', 'Buy the Persian Rug', 'Milker in Bag', 'Shears in Bag']);
 
 //Crops
-bingo = bingo.concat([
+bingo_simple = bingo_simple.concat([
 	'Corn in Bag', 'Tomato in Bag', 'Eggplant in Bag', 'Full Moon Berry in Bag',
-	'Strawberry in Bag', 'Turnip in Bag', 'Potato in Bag', 'Cabbage in Bag', 'Egg in Bag', 'Milk in Bag', 'Wool in Bag']);
+	'Turnip in Bag', 'Potato in Bag', 'Cabbage in Bag', 'Egg in Bag']);
+bingo_complex = bingo_complex.concat([
+	'Milk in Bag', 'Wool in Bag', 'Strawberry in Bag', 'Medium Fish in Bag']);
 
 //Recipes
-bingo = bingo.concat([
+bingo_simple = bingo_simple.concat([
 	'Fried Char from Greg &#40Large Fish&#41','Herb Rice Cake from Sydney &#40Edible Herb&#41',
-	'Veryberry Wine from Kai &#40Veryberry&#41', 'Sesame Dandelion from Saibara &#40Medicinal or Edible Herb&#41',
-	'Fried Potatoes and Bacon from the Mayor &#40Potato&#41','Easy Tomato Soup from the Shipper &#40Tomato&#41',
+	'Veryberry Wine from Kai &#40Veryberry&#41', 'Sesame Dandelion from Saibara &#40Med or Edible Herb&#41',
+	'Fried Potatoes and Bacon from the Mayor &#40Potato&#41',
 	'Corn  Fritter from Doug &#40Corn&#41', 'Mushroom Rice from Head Carpenter &#40Mushroom&#41',
-	'Spa Poached Egg from Kent &#40Egg&#41', 'Handmade Butter from Rick &#40Milk&#41',
-	'Eggplant with Miso Paste from the Midwife &#40Eggplant&#41', 'Strawberry Dog from Stu &#40Strawberry&#41']);
+	'Eggplant with Miso Paste from the Midwife &#40Eggplant&#41']);
+bingo_complex = bingo_complex.concat([
+	'Strawberry Dog from Stu &#40Strawberry&#41', 'Handmade Butter from Rick &#40Milk&#41',
+	'Spa Poached Egg from Kent &#40Egg&#41', 'Easy Tomato Soup from the Shipper &#40Tomato&#41',
+	'Stuffed Omelet from Gray &#40Egg, 51<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>&#41',
+	'Steamed Clam with Wine from Gotz &#40Grapes, 48<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>&#41',
+	'Mushroom Salsa from Sprites &#40Mushroom, 31<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>&#41',
+	'Spice Tea from Cliff &#40Egg in Winter&#41']);
 
 //Affection based
-bingo = bingo.concat([
-	'Received Wine from Duke', 'Fixed Music Box in Bag']);
+bingo_simple = bingo_simple.concat(['Fixed Music Box in Bag', 'Cliff Leaves']);
+bingo_complex = bingo_complex.concat(['Received Wine from Duke', 'Gray Plants Flowers']);
 
-var JSONBingo = JSON.stringify(bingo);
+var JSONBingoSimple = JSON.stringify(bingo_simple);
+var JSONBingoComplex = JSON.stringify(bingo_complex);
 
 var MD5 = function (string) {
 
-   function RotateLeft(lValue, iShiftBits) {
-           return (lValue<<iShiftBits) | (lValue>>>(32-iShiftBits));
-   }
+	function RotateLeft(lValue, iShiftBits) {
+		return (lValue<<iShiftBits) | (lValue>>>(32-iShiftBits));
+	}
 
-   function AddUnsigned(lX,lY) {
-           var lX4,lY4,lX8,lY8,lResult;
-           lX8 = (lX & 0x80000000);
-           lY8 = (lY & 0x80000000);
-           lX4 = (lX & 0x40000000);
-           lY4 = (lY & 0x40000000);
-           lResult = (lX & 0x3FFFFFFF)+(lY & 0x3FFFFFFF);
-           if (lX4 & lY4) {
-                   return (lResult ^ 0x80000000 ^ lX8 ^ lY8);
-           }
-           if (lX4 | lY4) {
-                   if (lResult & 0x40000000) {
-                           return (lResult ^ 0xC0000000 ^ lX8 ^ lY8);
-                   } else {
-                           return (lResult ^ 0x40000000 ^ lX8 ^ lY8);
-                   }
-           } else {
-                   return (lResult ^ lX8 ^ lY8);
-           }
-   }
+	function AddUnsigned(lX,lY) {
+		var lX4,lY4,lX8,lY8,lResult;
+		lX8 = (lX & 0x80000000);
+		lY8 = (lY & 0x80000000);
+		lX4 = (lX & 0x40000000);
+		lY4 = (lY & 0x40000000);
+		lResult = (lX & 0x3FFFFFFF)+(lY & 0x3FFFFFFF);
+		if (lX4 & lY4) {
+			return (lResult ^ 0x80000000 ^ lX8 ^ lY8);
+		}
+		if (lX4 | lY4) {
+			if (lResult & 0x40000000) {
+				return (lResult ^ 0xC0000000 ^ lX8 ^ lY8);
+			} else {
+				return (lResult ^ 0x40000000 ^ lX8 ^ lY8);
+			}
+		} else {
+			return (lResult ^ lX8 ^ lY8);
+		}
+	}
 
    function F(x,y,z) { return (x & y) | ((~x) & z); }
    function G(x,y,z) { return (x & z) | (y & (~z)); }
