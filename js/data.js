@@ -3,6 +3,7 @@ var headerText = "Harvest Moon 64 Bingo";
 var clickSnd = new Audio("audio/click.mp3");
 
 var winSnd = new Audio("audio/win.mp3");
+var shifted = false;
 
 var girls = ['Ann', 'Elli', 'Karen', 'Maria', 'Popuri'];
 var guys = ['Cliff', 'Jeff', 'Kai', 'Harris', 'Gray'];

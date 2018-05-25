@@ -3,6 +3,8 @@ $(document).ready(function() {
 	build_board();
 });
 
+$(document).on('keyup keydown', function(e){shifted = e.shiftKey} );
+
 function check_win() {
 	var row1 = ($('#sq0').data('value')+$('#sq1').data('value')+$('#sq2').data('value')+$('#sq3').data('value')+$('#sq4').data('value'));
 	var row2 = ($('#sq5').data('value')+$('#sq6').data('value')+$('#sq7').data('value')+$('#sq8').data('value')+$('#sq9').data('value'));
@@ -49,7 +51,7 @@ function build_board() {
 	$('#board').html(board);
 
 	$('div.square').tappable(function () {
-		if (event.shiftKey) { //holding shift while clicking
+		if (shifted) { //holding shift while clicking
 			$(this).data('value', 0);
 			$(this).removeClass('selected');
 			if ($(this).hasClass('good')) {
