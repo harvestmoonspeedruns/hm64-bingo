@@ -55,18 +55,18 @@ bingo_complex = bingo_complex.concat([
 
 //Recipes
 bingo_simple = bingo_simple.concat([
-	'Fried Char from Greg &#40Large Fish&#41','Herb Rice Cake from Sydney &#40Edible Herb&#41',
-	'Veryberry Wine from Kai &#40Veryberry&#41', 'Sesame Dandelion from Saibara &#40Med or Edible Herb&#41',
-	'Fried Potatoes and Bacon from the Mayor &#40Potato&#41',
-	'Corn  Fritter from Doug &#40Corn&#41', 'Mushroom Rice from Head Carpenter &#40Mushroom&#41',
-	'Eggplant with Miso Paste from the Midwife &#40Eggplant&#41']);
+	'Fried Char from Greg','Herb Rice Cake from Sydney',
+	'Veryberry Wine from Kai', 'Sesame Dandelion from Saibara',
+	'Fried Potatoes and Bacon from the Mayor',
+	'Corn  Fritter from Doug', 'Mushroom Rice from Head Carpenter',
+	'Eggplant with Miso Paste from the Midwife']);
 bingo_complex = bingo_complex.concat([
-	'Strawberry Dog from Stu &#40Strawberry&#41', 'Handmade Butter from Rick &#40Milk&#41',
-	'Spa Poached Egg from Kent &#40Egg&#41', 'Easy Tomato Soup from the Shipper &#40Tomato&#41',
-	'Stuffed Omelet from Gray &#40Egg, 51<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>&#41',
-	'Steamed Clam with Wine from Gotz &#40Grapes, 48<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>&#41',
-	'Mushroom Salsa from Sprites &#40Mushroom, 31<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>&#41',
-	'Spice Tea from Cliff &#40Egg in Winter&#41']);
+	'Strawberry Dog from Stu', 'Handmade Butter from Rick',
+	'Spa Poached Egg from Kent', 'Easy Tomato Soup from the Shipper',
+	'Stuffed Omelet from Gray',
+	'Steamed Clam with Wine from Gotz',
+	'Mushroom Salsa from Sprites',
+	'Spice Tea from Cliff']);
 
 //Affection based
 bingo_simple = bingo_simple.concat(['Fixed Music Box in Bag', 'Cliff Leaves']);
