@@ -36,13 +36,12 @@ bingo_complex = bingo_complex.concat([
 	'Maria&#8217s Photo']);
 
 //Extensions
-bingo_complex = bingo_complex.concat([
-	'Greenhouse Built', 'Log Terrace Built', 'Kitchen Built',
-	'Bathroom Built', 'Staircase Built', 'Baby Bed Built']);
-
-//Tools and Ricks Shop
 bingo_simple = bingo_simple.concat([
-	'Golden Hoe', 'Golden Axe', 'Golden Watering Can', 'Golden Hammer', 'Golden Sickle']);
+	'Baby Bed Built', 'Staircase Built', 'Bathroom Built']);
+bingo_complex = bingo_complex.concat([
+	'Greenhouse Built', 'Log Terrace Built', 'Kitchen Built']);
+
+//Rick's Shop
 bingo_complex = bingo_complex.concat([
 	'Buy the Room Organizer', 'Buy the Persian Rug', 'Milker in Bag', 'Shears in Bag']);
 
