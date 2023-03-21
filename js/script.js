@@ -43,7 +43,7 @@ function build_board() {
 		if (i == 12) {
 			board += "<div data-value='0' class='square' id='sq" + i + "'>";
 			board += "<img src='img/girls/girl_" + shuffled[i] + ".png' style='margin-top:5px' />";
-			board += girls[shuffled[i]] + "<div class='text'>&#8217s Photo" + "</div></div>";
+			board += "<div class='text'>" + girls[shuffled[i]] + " Photo" + "</div></div>";
 		} else {
 			board += "<div data-value='0' class='square' id='sq" + i + "'><div class='text'><br/>" + shuffled[i] + "</div></div>";
 		}
