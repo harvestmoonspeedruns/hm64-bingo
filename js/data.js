@@ -15,9 +15,9 @@ var bingo_complex = [];
 
 //Power Berries
 bingo_simple = bingo_simple.concat([
-	'Goddess Power Berry', 'Egg Festival Power Berry', 'Kappa Power Berry', 'Frozen Pond Rock Power Berry']);
+	'Strength Berry', 'Egg Fest Berry', 'Kappa Berry', 'Pond Rock Berry']);
 bingo_complex = bingo_complex.concat([
-	'Sprite Power Berry', 'Basil Power Berry', 'Ocean Power Berry', 'Farm Power Berry', 'Mine Power Berry']);
+	'Marbles Berry', 'Basil Berry', 'Ocean Berry', 'Farm Berry', 'Mine Berry']);
 
 //Events
 bingo_complex = bingo_complex.concat([
@@ -52,21 +52,21 @@ bingo_complex = bingo_complex.concat([
 
 //Recipes
 bingo_simple = bingo_simple.concat([
-	'Fried Char from Greg','Herb Rice Cake from Sydney',
-	'Veryberry Wine from Kai', 'Sesame Dandelion from Saibara',
-	'Fried Potatoes and Bacon from the Mayor',
-	'Corn  Fritter from Doug', 'Mushroom Rice from Head Carpenter',
-	'Eggplant with Miso Paste from the Midwife']);
+	'Fried Char &#40;Greg&#41;','Herb Rice Cake &#40;Sydney&#41;',
+	'Veryberry Wine &#40;Kai&#41;', 'Sesame Dandelion &#40;Saibara&#41;',
+	'Fried Potatoes and Bacon &#40;Mayor&#41;',
+	'Corn Fritter &#40;Doug&#41;', 'Mushroom Rice &#40;Head Carpenter&#41;',
+	'Eggplant with Miso Paste &#40;Midwife&#41;']);
 bingo_complex = bingo_complex.concat([
-	'Strawberry Dog from Stu', 'Handmade Butter from Rick',
-	'Spa Poached Egg from Kent', 'Easy Tomato Soup from the Shipper',
-	'Stuffed Omelet from Gray',
-	'Steamed Clam with Wine from Gotz',
-	'Mushroom Salsa from Sprites',
-	'Spice Tea from Cliff']);
+	'Strawberry Dog &#40;Stu&#41;', 'Handmade Butter &#40;Rick&#41;',
+	'Spa Poached Egg &#40;Kent&#41;', 'Easy Tomato Soup &#40;Shipper&#41;',
+	'Stuffed Omelet &#40;Gray&#41;',
+	'Steamed Clam with Wine &#40;Gotz&#41;',
+	'Mushroom Salsa &#40;Sprites&#41;',
+	'Spice Tea &#40;Cliff&#41;']);
 
 //Affection based
-bingo_simple = bingo_simple.concat(['Fixed Music Box in Bag', 'Cliff Leaves']);
+bingo_simple = bingo_simple.concat(['Fixed Music Box in Bag']);
 bingo_complex = bingo_complex.concat(['Received Wine from Duke', 'Gray Plants Flowers']);
 
 var JSONBingoSimple = JSON.stringify(bingo_simple);
