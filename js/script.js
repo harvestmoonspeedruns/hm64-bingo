@@ -103,8 +103,8 @@ function shuffle(code) {
 		cur_index += hash.charCodeAt(i);
 	}
 
-	random_girl = cur_index % 5;
-	for (var i = 0; i < 5; i++) {
+	random_girl = cur_index % 4;
+	for (var i = 0; i < 4; i++) {
 		if (i != random_girl) {
 			bingo_complex_copy.push(guys[i] + " Marries " + girls[i]);
 		}
