@@ -41,22 +41,21 @@ bingo_complex = bingo_complex.concat([
 
 //Rick's Shop
 bingo_complex = bingo_complex.concat([
-	'Buy the Room Organizer', 'Buy the Persian Rug', 'Milker in Bag', 'Shears in Bag']);
+	'Buy the Room Organizer', 'Buy the Carpet', 'Milker in Bag', 'Shears in Bag']);
 
-//Crops
+//Crops & Items
 bingo_simple = bingo_simple.concat([
 	'Corn in Bag', 'Tomato in Bag', 'Eggplant in Bag', 'Full Moon Berry in Bag',
 	'Turnip in Bag', 'Potato in Bag', 'Cabbage in Bag', 'Egg in Bag']);
 bingo_complex = bingo_complex.concat([
-	'Milk in Bag', 'Wool in Bag', 'Strawberry in Bag', 'Medium Fish in Bag']);
+	'Milk in Bag', 'Wool in Bag', 'Strawberry in Bag', 'Medium Fish in Bag', 'Rare Metal in Bag']);
 
 //Recipes
 bingo_simple = bingo_simple.concat([
-	'Fried Char &#40;Greg&#41;','Herb Rice Cake &#40;Sydney&#41;',
-	'Veryberry Wine &#40;Kai&#41;', 'Sesame Dandelion &#40;Saibara&#41;',
-	'Fried Potatoes and Bacon &#40;Mayor&#41;',
+	'Fried Char &#40;Fisherman&#41;', 'Veryberry Wine &#40;Kai&#41;', 'Sesame Dandelion &#40;Saibara&#41;',
+	'Fried Potatoes and Bacon &#40;Mayor&#41;', 'Cream of Turnip Stew &#40;Mayor&#8217s Wife&#41;', 'Rolled Cabbage &#40;Maria&#41;',
 	'Corn Fritter &#40;Doug&#41;', 'Mushroom Rice &#40;Head Carpenter&#41;',
-	'Eggplant with Miso Paste &#40;Midwife&#41;']);
+	'Eggplant with Miso Paste &#40;Midwife&#41;', 'Walnut Cake &#40;Ellen&#41;']);
 bingo_complex = bingo_complex.concat([
 	'Strawberry Dog &#40;Stu&#41;', 'Handmade Butter &#40;Rick&#41;',
 	'Spa Poached Egg &#40;Kent&#41;', 'Easy Tomato Soup &#40;Shipper&#41;',
@@ -67,7 +66,7 @@ bingo_complex = bingo_complex.concat([
 
 //Affection based
 bingo_simple = bingo_simple.concat(['Fixed Music Box in Bag']);
-bingo_complex = bingo_complex.concat(['Received Wine from Duke', 'Gray Plants Flowers']);
+bingo_complex = bingo_complex.concat(['Received Wine from Duke', 'Gray Plants Flowers', 'Marriage Photo']);
 
 var JSONBingoSimple = JSON.stringify(bingo_simple);
 var JSONBingoComplex = JSON.stringify(bingo_complex);
