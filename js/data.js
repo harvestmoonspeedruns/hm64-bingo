@@ -29,7 +29,7 @@ bingo_complex = bingo_complex.concat([
 
 //Photos
 bingo_simple = bingo_simple.concat([
-	'Swimming Photo', 'Ride the Balloon Photo', 'Blue Mist Photo']);
+	'Swimming Photo', 'Ride the Balloon Photo', 'Popuri Photo']);
 bingo_complex = bingo_complex.concat([
 	'Dog Race Photo', 'Horse Race Photo', 'Cow Festival Photo']);
 
