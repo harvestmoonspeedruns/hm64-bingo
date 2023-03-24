@@ -53,7 +53,7 @@ bingo_complex = bingo_complex.concat([
 //Recipes
 bingo_simple = bingo_simple.concat([
 	'Fried Char &#40;Greg&#41;', 'Veryberry Wine &#40;Kai&#41;', 'Sesame Dandelion &#40;Saibara&#41;',
-	'Fried Potatoes and Bacon &#40;Mayor&#41;', 'Cream of Turnip Stew &#40;Mayor&#8217s Wife&#41;', 'Rolled Cabbage &#40;Maria&#41;',
+	'Fried Potatoes and Bacon &#40;Mayor&#41;', 'Rolled Cabbage &#40;Maria&#41;',
 	'Corn Fritter &#40;Doug&#41;', 'Mushroom Rice &#40;Head Carpenter&#41;',
 	'Eggplant with Miso Paste &#40;Midwife&#41;', 'Walnut Cake &#40;Ellen&#41;']);
 bingo_complex = bingo_complex.concat([
