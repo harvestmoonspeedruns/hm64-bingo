@@ -42,10 +42,10 @@ function build_board() {
 	for (var i = 0; i < 25; i++) {
 		if (i == 12) {
 			board += "<div data-value='0' class='square' id='sq" + i + "'>";
-			board += "<img src='img/girls/girl_" + shuffled[i] + ".png' style='margin-top:5px' />";
+			board += "<img src='img/girls/girl_" + shuffled[i] + ".png' style='margin-top:1px' />";
 			board += "<div class='text'>" + girls[shuffled[i]] + " Photo" + "</div></div>";
 		} else {
-			board += "<div data-value='0' class='square' id='sq" + i + "'><div class='text'><br/>" + shuffled[i] + "</div></div>";
+			board += "<div data-value='0' class='square' id='sq" + i + "'><div class='text'>" + shuffled[i] + "</div></div>";
 		}
 	}
 	$('#board').html(board);
